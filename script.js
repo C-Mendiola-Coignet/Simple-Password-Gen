@@ -27,15 +27,15 @@ generateBtn.addEventListener("click", lengthPrompt);
 
 //prompts for character types
 var typeConfirm = function () {
-  lowerCase = confirm("Would you like to use lowercase characters? Press OK for Yes  Cancel for No");
-  upperCase = confirm("Would you like to use UPPERCASE characters? Press OK for Yes  Cancel for No");
-  numerals = confirm("Would you like to use numbers? Press OK for Yes  Cancel for No");
-  specialChars = confirm("Would you like to use special characters? Press OK for Yes  Cancel for No");
+  lowerCase = confirm("Would you like to use lowercase characters?\nPress OK for Yes\nPress Cancel for No");
+  upperCase = confirm("Would you like to use UPPERCASE characters?\nPress OK for Yes\nPress Cancel for No");
+  numerals = confirm("Would you like to use numbers?\nPress OK for Yes\nPress Cancel for No");
+  specialChars = confirm("Would you like to use special characters?\nPress OK for Yes\nPress Cancel for No");
   if (!lowerCase && !upperCase && !numerals && !specialChars) {
     alert("You must choose at least one character type.");
     return;
   } else {
-    confirm("You have selected - Password Length: " + charLength + " Lowercase Letters: " + lowerCase + " Uppercase Letters: " + upperCase + " Numerals: " + numerals + " Special Characters: " + specialChars + " ...Are you ready to generate?");
+    confirm("You have selected:\nPassword Length: " + charLength + "\nLowercase Letters: " + lowerCase + "\nUppercase Letters: " + upperCase + "\nNumerals: " + numerals + "\nSpecial Characters:\n" + specialChars + "\n...Are you ready to generate?");
   }
   generatePassword();
 }
