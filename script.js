@@ -15,6 +15,8 @@ var lengthPrompt = function () {
   }
 }
 
+generateBtn.addEventListener("click", lengthPrompt);
+
 // Write password to the #password input
 function writePassword() {
   var password = "";
