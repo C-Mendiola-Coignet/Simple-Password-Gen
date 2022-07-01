@@ -10,13 +10,13 @@ var passwordDisplay = document.querySelector("#password");
 
 // prompt for character length 
 var lengthPrompt = function () {
-  charLength = prompt("Select password character length (min 8 - max 128)", "Type number here");
+  charLength = prompt("Select password length (8-128 characters long)", "Type number here");
   charLength = Math.floor(charLength);
   if (isNaN(charLength)) {
     alert("Input must be a whole number");
     return;
   } else if (charLength < 8 || charLength > 128) {
-    alert("Number must be between 8 - 128");
+    alert("Number must be between 8 - 128 characters");
     return;
   } else {
     typeConfirm();
@@ -29,8 +29,8 @@ generateBtn.addEventListener("click", lengthPrompt);
 var typeConfirm = function () {
   lowerCase = confirm("Would you like to use lowercase characters? Press OK for Yes  Cancel for No");
   upperCase = confirm("Would you like to use UPPERCASE characters? Press OK for Yes  Cancel for No");
-  numerals = confirm("Would you like to use numarals? i.e. 12345 Press OK for Yes  Cancel for No");
-  specialChars = confirm("Would you like to use special characters? i.e. !@#$% Press OK for Yes  Cancel for No");
+  numerals = confirm("Would you like to use numbers? Press OK for Yes  Cancel for No");
+  specialChars = confirm("Would you like to use special characters? Press OK for Yes  Cancel for No");
   if (!lowerCase && !upperCase && !numerals && !specialChars) {
     alert("You must choose at least one character type.");
     return;
