@@ -15,8 +15,8 @@ function writePassword() {
 return password;
 }
 
-// passwordText.value = password;
+passwordText.value = password;
 
 // function gfg_Run(){generateBtn.innerHTML = fucntion writePassword()}
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword());
+generateBtn.addEventListener("click", writePassword());
