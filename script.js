@@ -1,3 +1,10 @@
+var charLength;
+var lowerCase;
+var upperCase;
+var numerals;
+var specialChars;
+var charSet;
+var pWord;
 var generateBtn = document.querySelector("#generate");
 
 // prompt for character length 
