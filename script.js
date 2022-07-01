@@ -6,6 +6,7 @@ var specialChars;
 var charSet;
 var pWord;
 var generateBtn = document.querySelector("#generate");
+var passwordDisplay = document.querySelector("#password");
 
 // prompt for character length 
 var lengthPrompt = function () {
@@ -33,29 +34,31 @@ var typeConfirm = function () {
   if (!lowerCase && !upperCase && !numerals && !specialChars) {
     alert("You must choose at least one character type.");
     return;
-  } else {//input repeated on confirm menu
+  } else {
     confirm("You have selected - Password Length: " + charLength + " Lowercase Letters: " + lowerCase + " Uppercase Letters: " + upperCase + " Numerals: " + numerals + " Special Characters: " + specialChars + " ...Are you ready to generate?");
   }
-  writePassword();
-
+  generatePassword();
 }
 
-// Write password to the #password input
-function writePassword() {
-  var password = "";
-  var passwordText = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
-  "abcdefghijklmnopqrstuvwxyz!@#$%^&*";
-  for (i = 1; i <= 8; i++) { 
-    var char = Math.floor(Math.random() 
-                * passwordText.length + 1); 
-      
-    password += passwordText.charAt(char) 
-} 
-return password;
+// generates password based on prompt answers
+var generatePassword = function () {
+  charSet = [];
+  if (lowerCase === true) {
+    charSet.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+  }
+  if (upperCase === true) {
+    charSet.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+  }
+  if (numerals === true) {
+    charSet.push("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+  }
+  if (specialChars === true) {
+    charSet.push("~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "`", "\\", ",", "|", "{", "}", "[", "]", "\.", "\,", "<", ">", "?");
+  }
+  console.log(charSet);
+  pWord = "";
+  for (var i = 0; i < charLength; i++) {
+    pWord += charSet[(Math.floor(Math.random() * charSet.length))];
+  }
+  passwordDisplay.innerText = "Your new password: " + pWord.toString();
 }
-
-passwordText.value = password;
-
-// function gfg_Run(){generateBtn.innerHTML = fucntion writePassword()}
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword());
